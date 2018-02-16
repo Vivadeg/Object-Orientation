@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package objectorientation_assignment2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Victor
+ * input letter by user
+ * let pc compare to its random word
+ * if letter is in word give letterhint
+ * if letter is not count mistake
+ */
+public class ObjectOrientation_Assignment2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        System.out.println("input a letter");
+        Scanner scanner = new Scanner( System.in );
+        String input = scanner.nextLine();
+      
+        WordReader wr = new WordReader("words.txt");
+        String word = wr.getWord();
+        StringBuilder sb = new StringBuilder();
+        for (int i=1; i<=word.length(); i++){
+            if (input.equals(word.charAt(i))) {
+                sb.append(input);
+            } else {
+                sb.append(".");
+            }
+            }
+        System.out.println(sb);
+        }
+    
+    
+}
